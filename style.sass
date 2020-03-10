@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans&display=swap')
+
+$color-primary: #FAB49B
+$color-secundary: #FBC7B4
+$color-font: #616060
+$font-baskerville: 'Libre Baskerville'
+$font-sans: 'Open-Sans', sans-serif
+    
+
+@mixin display-elements ($align, $justify)
+    align-items: $align
+    display: flex
+    justify-content: $justify
+
+@mixin button($color, $background, $border, $padding)
+    background-color: $background
+    border-style: $border
+    color: $color
+    cursor: pointer
+    padding: $padding
+
+@mixin images-home($url)
+    background-image: url($url)
+    background-repeat: no-repeat
+    background-size: cover
+
+@mixin image-legend
+    background-color: #FFFFFF
+    border: 1px solid #FFFFFF
+    padding: 10px 20px
+    position: absolute
+
+@mixin controlls()
+    @include display-elements (center, normal)
+    cursor: pointer
+    height: 100%
+
+body
+    color: $color-font
+    display: grid
+    grid-template-areas: 'header' 'section-banner' 'section-infos' 'section-images' 'section-buy' 'section-photos' 'section-social' 'footer'
+    grid-template-rows: 25vh 65vh 10vh 119vh 85vh 88vh 50vh 76vh
+    margin: 0
+    width: 100%
+
+    header
+        @include display-elements(normal, space-between)
+        border-bottom: 2px solid $color-primary
+        flex-direction: column
+        grid-area: header
+        
+        .h-top
+            @include display-elements(center, flex-end)
+            background-color: $color-primary
+            height: 3.1vh
+        
+            .h-top-text
+                @include display-elements(center, space-between)
+                font-family: $font-sans
+                font-size: 0.8rem
+                margin-right: 6%
+                width: 20vw
+        
+        .h-center
+            @include display-elements(center, space-around)
+        
+            input
+                background-image: url(images/iconBusca.svg)
+                background-position: 100% center
+                background-repeat: no-repeat
+                border: none
+                border-bottom: 1px solid #CCC
+                font-family: $font-sans
+                height: 34px
+                outline: none
+                width: 200px
+        
+            input::placeholder
+                font-size: 0.7rem
+                padding-left: 10px
+        
+            .h-text-center
+                @include display-elements(center, space-between)
+                flex-direction: column
+                font-family: $font-baskerville
+                height: 11vh
+        
+                h1
+                    font-size: 1.5rem
+                    font-weight: normal
+                    margin: 0
+        
+                    span
+                        font-size: 2.5rem
+        
+                span
+                    font-size: 0.8rem
+        
+            .h-options
+                @include display-elements(center, space-between)
+                font-family: $font-sans
+                font-size: 0.8rem
+                width: 21vw
+        
+                span
+                    @include display-elements(center, normal)
+                    img
+                        margin-right: 10px
+                #items
+                    cursor: pointer
+                    padding: 5px 15px
+                    span
+                       margin-right: 5px
+
+
+                .h-o-items
+                    align-items: center
+                    background-color: #FFFFFF
+                    display: none
+                    flex-direction: column
+                    height: 50vh
+                    justify-content: flex-start
+                    margin-top: 200px
+                    position: absolute
+                    width: 350px
+
+                    #products
+                        height: 40vh
+                        overflow: auto
+
+                    .item-info
+                        @include display-elements (center, space-between)
+                        border-bottom: 1px solid $color-font
+                        margin: 20px
+
+                        img
+                            height: 100px
+                            width: 100px
+                        
+                        .i-i-text
+                            width: 60%
+                            span
+                                font-family: $font-sans
+                                font-size: 0.7rem
+                                line-height: 22px
+                            p
+                                font-family: $font-baskerville
+                                font-size: 0.8rem
+                                padding: 0
+                                margin: 0
+                            span:nth-child(2)
+                                @include display-elements (center, space-between)
+                            span:nth-child(2), span:nth-child(3)
+                                font-weight: bold
+                            span:nth-child(3)
+                                @include display-elements (center, space-between)
+                                margin-top: 20px;
+
+                                strong
+                                    font-size: 0.9rem
+
+                    .item-soma
+                        @include display-elements (center, space-around)
+                        background-color: #EEF1F2
+                        font-family: $font-sans
+                        height: 5vh
+                        width: 100%
+
+                        span:nth-child(2)
+                            color: #000000
+                            font-weight: bold
+                    
+                    .item-options
+                        @include display-elements (center, space-around)
+                        font-family: $font-baskerville
+                        margin: 20px
+
+                        span
+                            cursor: pointer
+                            text-align: center
+                            text-decoration: underline
+
+                        button
+                            @include button(#FFFFFF, $color-primary, none, 10px 30px)
+                            font-family: $font-baskerville
+
+        nav
+            align-self: center
+            font-size: 0.8rem
+            width: 50vw
+        
+            ul
+                @include display-elements(center, space-between)
+                font-family: $font-baskerville
+                height: 8vh
+                margin: 0
+                padding: 0
+
+        
+                li
+                    cursor: pointer
+                    list-style: none
+                li:nth-child(6)
+                    color: $color-primary
+                    border-bottom: 2px solid $color-primary
+                    border-top: 2px solid $color-primary
+                li:hover
+                    color: #000000
+                    background-color: $color-primary
+                    padding: 5px
+
+    .banner
+        @include display-elements (center, space-between)
+        @include images-home('images/imgHomeBanner.png')
+        background-size: cover
+        grid-area: section-banner
+
+        .prev, .next
+            @include controlls()
+        .prev:hover, .next:hover
+            background-color: rgba(251, 199, 180, 0.5)
+
+        .prev
+            img
+                transform: rotateY(180deg)
+                height: 30px
+                width: 30px
+
+        .next
+            img
+                height: 30px
+                width: 30px
+        
+        .b-info
+            @include display-elements(center, space-between)
+            height: 100%
+            width: 100%
+        
+            .b-info-text
+                @include display-elements(center, space-between)
+                flex-direction: column
+                heght: 20vh
+                width: 50%
+        
+                span
+                    animation-name: moveInRight
+                    animation-duration: 1s
+                    font-family: $font-sans
+        
+                h1
+                    animation-name: moveInLeft
+                    animation-duration: 1s
+                    font-family: $font-baskerville
+                    font-size: 2rem
+                    letter-spacing: 15px
+        
+                button
+                    @include button(#FFFFFF, $color-primary, none, 5px 10px)
+
+            .b-info-image
+                display: none
+                height: 100%
+                width: 50%
+        
+                img
+                    animation: moveInRight
+                    animation-duration: 1s
+                    height: 100%
+                    float: right
+    
+    .section-infos
+        @include display-elements(center, space-around)
+        background-color: #EEF1F2
+        grid-area: section-infos
+        margin: 8px 0
+        
+        span
+            @include display-elements(center, normal)
+            font-family: $font-baskerville
+            font-size: 0.8rem
+            
+            img
+                margin-right: 10px
+            
+            strong
+                font-family: $font-sans
+                margin: 0 5px
+    
+    .section-images
+        @include display-elements(normal, space-between)
+        flex-direction: column
+        grid-area: section-images
+
+        .s-img-top
+            @include display-elements(center, space-between)
+
+            .img1
+                @include display-elements(flex-end, center)
+                @include images-home('images/imgHome02.png')
+                height: 51vh
+                margin-right: 10px
+                width: 50%
+
+                span
+                    @include image-legend
+
+            .img2
+                @include display-elements(flex-end, center)
+                @include images-home('images/imgHome03.png')
+                height: 51vh
+                width: 50%
+
+                span
+                    @include image-legend
+
+        .s-img-jewels
+            align-self: center
+            margin-top: 10px
+            width: 75vw
+
+            .img3
+                @include display-elements(flex-end, center)
+                @include images-home('images/imgHome04Banner.png')
+                background-size: initial
+                height: 35vh
+                width: 100%
+
+                span
+                    @include image-legend
+            
+            .img-jewels-group
+                @include display-elements(center, center)
+                margin-top: 10px
+            
+                .img-jewels
+                    @include display-elements(center, space-around)
+                    border: 1px solid #B3B3B3
+                    height: 30vh
+                    margin: 0 5px
+                    width: 25vw
+            
+                    .img-infos
+                        @include display-elements(center, space-between)
+                        flex-direction: column
+                        font-family: $font-baskerville
+                        height: 30%
+                    
+                    button
+                        @include button(#000000, #FFFFFF, solid, 5px 10px)
+    
+    .section-buy
+        @include display-elements (center, space-between)
+        flex-direction: column
+        grid-area: section-buy
+        margin-top: 35px
+
+        .s-b-top
+            @include display-elements(center, space-around)
+            align-self: center
+            width: 75vw
+
+            span:nth-child(1), :nth-child(3)
+                width: 40%
+                background-color: #B3B3B3
+                height: 1px
+            
+            span:nth-child(2)
+                font-family: $font-sans
+                font-size: 1.3rem
+                letter-spacing: 5px
+                margin: 0 30px
+            
+        .s-b-infos
+            @include display-elements (center, space-around)
+            margin-top: 35px
+            width: 75vw
+            
+            .info-cards
+                @include display-elements (center, space-between)
+                flex-direction: column
+                width: 30%
+
+                .i-c-image
+                    @include display-elements (center, center)
+                    background-color: #000000
+                    width: 100%
+                    
+                    img
+                        width: 100%
+                    img:hover
+                        opacity: 0.5
+                p
+                    font-family: $font-baskerville
+                    font-size: 0.7rem
+                    letter-spacing: 2px
+                    text-align: center
+
+                span
+                    font-family: $font-sans
+                    font-size: 0.8rem
+
+                span:nth-child(1)
+                    text-decoration: line-through
+                
+                strong
+                    color: #000000
+                    font-family: $font-sans
+                    font-size: 1rem
+
+                button
+                    @include button(#FFFFFF, $color-primary, none, 5px 40px)
+                    font-family: $font-baskerville
+                    margin-top: 30px
+    
+    .section-photos
+        @include display-elements (center, center)
+        border-bottom: 1px solid #B3B3B3
+        grid-area: section-photos
+        height: 90%
+        margin-top: 30px
+        padding-bottom: 40px
+
+        .photos-img
+            @include display-elements (center, center)
+            align-self: center
+            height: 100%
+            width: 75vw
+
+            .img4
+                @include display-elements(flex-end, center)
+                @include images-home('images/imgHome04.png')
+                height: 100%
+                width: 54%
+
+                span
+                    @include image-legend
+
+            .imgs-right
+                @include display-elements (center, center)
+                flex-direction: column
+                height: 100%
+                width: 40%
+                
+                .img5
+                    @include display-elements(flex-end, center)
+                    @include images-home('images/imgHome05.png')
+                    background-position: center
+                    height: 50%
+                    width: 100%
+
+                    span
+                        @include image-legend
+
+                .img6
+                    @include display-elements(flex-end, center)
+                    @include images-home('images/imgHomeBrincos.png')
+                    background-position: center
+                    height: 50%
+                    width: 100%
+                    
+                    span
+                        @include image-legend
+                                
+    .section-social
+        @include display-elements (center, space-between)
+        flex-direction: column
+        grid-area: section-social
+        margin-top: 40px
+
+        .s-s-top
+            @include display-elements (center, space-between)
+            border-bottom: 1px solid #B3B3B3
+            flex-direction: column
+            font-family: $font-sans
+            height: 9vh
+            padding-bottom: 10px
+
+            img
+                height: 25px
+                width: 25px
+
+        .s-s-imgs
+            @include display-elements (center, space-between)
+            height: 27vh
+
+            .left, .right
+                @include controlls()
+
+            .left
+                img
+                    transform: rotateY(180deg)
+                    height: 30px
+                    width: 30px
+            
+            .right
+                img
+                    height: 30px
+                    width: 30px
+
+            img
+                height: 90%
+                width: 15%
+    
+    footer
+        @include display-elements (center, normal)
+        border-top: 1px solid #B3B3B3
+        flex-direction: column
+        grid-area: footer
+        margin-top: 25px;
+
+        .f-contact
+            @include display-elements (center, space-around)
+            height: 15vh
+            width: 100%
+            
+            .f-c-email
+                @include display-elements (center, space-between)
+                font-family: $font-sans
+                font-size: 0.9rem
+                font-weight: bold
+
+                img
+                    margin-right: 10px
+            
+            .f-c-input
+                @include display-elements (center, center)
+
+                input
+                    height: 6vh;
+                    outline: none
+                    width: 65vh;
+                input::placeholder
+                    font-size: 0.7rem
+                    padding-left: 20px
+                    
+                
+                img
+                    background-color: $color-font
+                    border: 1px solid $color-font
+                    cursor: pointer
+                    padding: 12px
+
+            .f-c-social
+                @include display-elements (center, space-between)
+                width: 15vw
+        
+        .f-infos
+            @include display-elements (center, space-around)
+            background-color: $color-primary
+            height: 40vh
+            width: 100%
+
+            .f-i-central, .f-i-institucional, .f-i-atendimento, .f-i-certificados
+                @include display-elements (flex-start, normal)
+                flex-direction: column
+                font-family: $font-sans
+                font-size: 0.8rem
+                height: 70%
+
+                span
+                    line-height: 25px
+                span:nth-child(1)
+                    color: #000000
+                    font-family: $font-baskerville
+                    font-size: 0.8rem
+                
+                .f-i-a-infos
+                    @include display-elements (flex-start, space-between)
+                    width: 23vw
+
+                    p
+                        margin: 0;
+                        padding: 0;
+
+                        span
+                            font-family: $font-sans
+                            font-weight: bold
+
+        .f-payment
+            @include display-elements (center, flex-start)
+            background-color: $color-secundary
+            height: 7vh
+            width: 100%
+
+            span
+                color: #000000
+                font-family: $font-baskerville
+                font-size: 0.7rem
+                margin-left: 55px
+
+            .f-p-options
+                margin-left: 15px
+                img
+                    background-color: #FFFFFF
+                    border: 1px solid #FFFFFF
+                    padding: 0 15px
+
+        .f-end
+            @include display-elements (center, space-between)
+            height: 10vh
+            width: 92%
+
+            .f-e-text
+                @include display-elements (flex-start, center)
+                flex-direction: column
+                font-family: $font-sans
+                font-size: 0.7rem
+
+            span
+                line-height: 15px
+
+@keyframes moveInRight
+    from
+        opacity: 0;
+        transform: translateX(100px);
+
+    to
+        opacity: 1;
+        transform: translate(0);
+
+@keyframes moveInLeft
+    from
+        opacity: 0;
+        transform: translateX(-100px);
+    
+    to
+        opacity: 1;
+        transform: translate(0);

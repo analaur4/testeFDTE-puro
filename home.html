@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="h-top">
+            <div class="h-top-text">
+                <span>MEUS PEDIDOS</span>
+                <span>ENTRAR/CADASTRE-SE</span>
+            </div>
+        </div>
+
+        <div class="h-center">
+            <input type="text" placeholder="Digite o que você procura...">
+            <div class="h-text-center">
+                <h1><span>N</span>AYARA <span>M</span>ARRA</h1>
+                <span>JÓIAS E SEMI-JÓIAS</span>
+            </div>
+            <div class="h-options">
+                <span>
+                    <img src="images/iconCoração.svg" alt="Coração">
+                    LISTA DE DESEJOS
+                </span>
+                <span id="items" onclick="showItems()">
+                    <img src="images/iconSacola.svg" alt="Sacola De Compras">
+                    <span id="qtd-items">1</span> Itens
+                </span>
+                <div class="h-o-items">
+                    <div id="products">
+                        <div class="item-info">
+                            <img src="images/anel01.png" alt="Anel">
+                            <div class="i-i-text">
+                                <p>LOREM IPSUM DOLOR SIT ADHEMAS</span>
+                                <span>COD. 1234567890</span>
+                                <span><span>COR: LOREM</span> <span>TAMANHO: 42</span> </span>
+                                <span>QUANTIDADE: 1 <strong id="valueObj">900,00</strong></span> 
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item-soma">
+                        <span> <span class="qtd-items" style="margin-right: 5px">1</span> ITENS NO CARRINHO</span>
+                        <span>TOTAL: R$ <strong id="valueTotal"></strong></span>
+                    </div>
+                
+                    <div class="item-options">
+                        <span>CONTINUAR COMPRANDO</span>
+                        <button>FINALIZAR COMPRA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li>NOVIDADES</li>
+                <li>ANÉIS</li>
+                <li>BRINCOS</li>
+                <li>COLARES</li>
+                <li>CONJUNTOS</li>
+                <li>SALES</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="prev" onclick="prevImage(-1)">
+            <img src="images/iconSeta02.svg" alt="Icone Seta">
+        </div>
+        <div class="b-info">
+            <div class="b-info-text">
+                <span>NEW FOR <strong>2018</strong></span>
+                <h1>COLLECTION</h1>
+                <button class="ring" onclick="buy()">SHOP NOW</button>
+            </div>
+            <div class="b-info-image">
+                <img src="images/imgHome01.png" alt="Mulher">
+            </div>
+            <div class="b-info-image">
+                <img src="images/imgHome05.png" alt="Mulher">
+            </div>
+            <div class="b-info-image">
+                <img src="images/imgHome04.png" alt="Banner">
+            </div>
+        </div>
+        <div class="next" onclick="nextImage(+1)">
+            <img src="images/iconSeta02.svg" alt="Icone Seta">
+        </div>
+    </section>
+
+    <section class="section-infos">
+        <span>
+            <img src="images/iconCaminhao.svg" alt="Icone Caminhão">
+            FRETE GRÁTIS ACIMA DE <strong>R$200,00</strong>
+        </span>
+
+        <span>
+            <img src="images/iconCartao.svg" alt="Icone Cartão">
+            ATÉ <strong>10X</strong> SEM JUROS
+        </span>
+
+        <span>
+            <img src="images/iconDesconto.svg" alt="Icone Desconto">
+            <strong>10% OFF</strong> À VISTA NO CARTÃO OU BOLETO
+        </span>
+
+        <span>
+            <img src="images/iconCartao.svg" alt="Icone Cadeado">
+            <strong>SEGURANÇA</strong> EM TODAS ETAPAS DA COMPRA
+        </span>
+    </section>
+
+    <section class="section-images">
+        <div class="s-img-top">
+            <div class="img1">
+                <span>CLARITAS IRIUM</span>
+            </div>
+
+            <div class="img2">
+                <span>ADHEMAS ADES</span>
+            </div>
+        </div>
+
+        <div class="s-img-jewels">
+            <div class="img3">
+                <span>DOMENICO DHE</span>
+            </div>
+
+            <div class="img-jewels-group">
+                <div class="img-jewels">
+                    <img src="images/imgHomeAnel.png" alt="Anel">
+                    <div class="img-infos">
+                        <span>ANÉIS</span>
+                        <button>SHOP NOW</button>
+                    </div>
+                </div>
+
+                <div class="img-jewels">
+                    <img src="images/imgHomeBrincos02.png" alt="Brincos">
+                    <div class="img-infos">
+                        <span>BRINCOS</span>
+                        <button>SHOP NOW</button>
+                    </div>
+                </div>
+
+                <div class="img-jewels">
+                    <img src="images/imgHomeColar.png" alt="Colar">
+                    <div class="img-infos">
+                        <span>COLAR</span>
+                        <button>SHOP NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-buy">
+        <div class="s-b-top">
+            <span></span>
+            <span>LANÇAMENTOS</span>
+            <span></span>
+        </div>
+
+        <div class="s-b-infos">
+            <div class="info-cards">
+                <div class="i-c-image">
+                    <img src="images/anel01.png" alt="Anel">
+                </div>
+                <p>LOREM IPSUM DOLOR SIT AMET CLARITAS ADHEMAS</p>
+                <p>
+                    <span>R$ 1040,00</span>
+                    <strong>R$ 900,00</strong>
+                </p>
+                <span>2x de R$ 450,00 sem juros</span>
+                <button class="ring" onclick="buy()">COMPRAR</button>
+            </div>
+
+            <div class="info-cards">
+                <div class="i-c-image">
+                    <img src="images/anel02.png" alt="Anel">
+                </div>
+                <p>LOREM IPSUM DOLOR SIT AMET CLARITAS ADHEMAS</p>
+                <p>
+                    <span>R$ 1040,00</span>
+                    <strong>R$ 900,00</strong>
+                </p>
+                <span>2x de R$ 450,00 sem juros</span>
+                <button class="ring" onclick="buy()">COMPRAR</button>
+            </div>
+
+            <div class="info-cards">
+                <div class="i-c-image">
+                    <img src="images/anel03.png" alt="Anel">
+                </div>
+                <p>LOREM IPSUM DOLOR SIT AMET CLARITAS ADHEMAS</p>
+                <p>
+                    <span>R$ 1040,00</span>
+                    <strong>R$ 900,00</strong>
+                </p>
+                <span>2x de R$ 450,00 sem juros</span>
+                <button class="ring" onclick="buy()">COMPRAR</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-photos">
+        <div class="photos-img">
+            <div class="img4">
+                <span>CLARITAS IRIUM</span>
+            </div>
+    
+            <div class="imgs-right">
+                <div class="img5">
+                    <span>AHEMAS ADES</span>
+                </div>
+        
+                <div class="img6">
+                    <span>OTERA NOREM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-social">
+        <div class="s-s-top">
+            <img src="images/iconInstagram.svg" alt="Icone Instagram">
+            <span>@NAYARAMARRA</span>
+        </div>
+        <div class="s-s-imgs">
+            <div class="left">
+                <img src="images/iconSeta02.svg" alt="Icone Seta">
+            </div>
+            <img src="images/anel04.png" alt="Anel">
+            <img src="images/colar.png" alt="Colar">
+            <img src="images/anel06.png" alt="Anel">
+            <img src="images/colarBrinco09.png" alt="Colar e Brincos">
+            <img src="images/colar08.png" alt="Mulher colar">
+            <img src="images/brinco07.png" alt="Brinco">
+            <div class="right">
+                <img src="images/iconSeta02.svg" alt="Icone Seta">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <section class="f-contact">
+            <div class="f-c-email">
+                <img src="images/iconEvelope.svg" alt="Envelope">
+                <span>CADASTRE-SE E RECEBA OFERTAS EXCLUSIVAS</span>
+            </div>
+            <div class="f-c-input">
+                <input type="email" name="email" id="email" placeholder="E-mail">
+                <img src="images/iconSeta.svg" alt="Seta">
+            </div>
+            <div class="f-c-social">
+                <img src="images/iconFacebook.svg" alt="Icon Facebook">
+                <img src="images/iconGoogPlus.svg" alt="Icon G+">
+                <img src="images/iconTwitter.svg" alt="Icon Twitter">
+                <img src="images/iconInstagram.svg" alt="Icon Instagram">
+                <img src="images/iconPint.svg" alt="Icon Pinterest">
+                <img src="images/iconYoutube.svg" alt="Icon Youtube">
+            </div>
+        </section>
+
+        <section class="f-infos">
+            <div class="f-i-central">
+                <span>CENTRAL DE AJUDA</span>
+                <span>Central de Atendimento</span>
+                <span>Envio e Entrega</span>
+                <span>Navegando e Comprando</span>
+                <span>Trocas e Divulgação</span>
+                <span>Fale Conosco</span>
+                <span>Mapa do Site</span>
+            </div>
+
+            <div class="f-i-institucional">
+                <span>INSTITUCIONAL</span>
+                <span>Quem Somos</span>
+                <span>Nossas Lojas</span>
+                <span>Política de Privacidade</span>
+                <span>Afiliados</span>
+            </div>
+
+            <div class="f-i-atendimento">
+                <span>ATENDIMENTO</span>
+                <div class="f-i-a-infos">
+                    <img src="images/iconTelefone.svg" alt="Icon Telefone">
+                    <p>
+                        <span>TELEVENDAS 0800 - 0000 | SAC 0800 - 0000</span>
+                        Horário de Atendimento <br>
+                        De segunda a sexta das 00 as 00
+                    </p>
+                </div>
+            </div>
+
+            <div class="f-i-certificados">
+                <span>CERTIFICADOS</span>
+                <img src="images/VerificadorEProtegido.png" alt="Certificado">
+            </div>
+        </section>
+
+        <section class="f-payment">
+            <span>FORMAS DE PAGAMENTO</span>
+            <div class="f-p-options">
+                <img src="images/iconMastercard.svg" alt="Icone Mastercard">
+                <img src="images/iconVisa.svg" alt="Icone Visa">
+                <img src="images/iconAmericanExpress.svg" alt="Icone American Express">
+                <img src="images/iconDinnersClub.svg" alt="Icone Dinners Club">
+                <img src="images/iconElo.svg" alt="Icone Elo">
+                <img src="images/iconBoleto.svg" alt="Icone Boleto">
+            </div>
+        </section>
+
+        <section class="f-end">
+            <div class="f-e-text">
+                <span>Lorem Ipsum Dolor Sit - CNPJ 60.306.289/0007-99 - Av. Lorem Ipsum, 3103 - lj 74/74 a / Piso Campo Belo - CEP 04029-902 - Indianópolis - São Paulo - SP</span>
+                <span>Nayara Marra. 2018 - Todos os direitos reservados.</span>
+            </div>
+            <img src="images/digitalCome.png" alt="Digital Commerce">
+        </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38 37">
+  <g id="IconBoleto" transform="translate(-5975 1617)">
+    <path id="Icon_awesome-barcode" data-name="Icon awesome-barcode" d="M0,31.5V4.5H1.266v27Zm1.888-.019V4.5h.643V31.481Zm1.908,0V4.5H4.42V31.481Zm3.154,0V4.5h.623V31.481Zm2.531,0V4.5h1.246V31.481Zm3.154,0V4.5h.623V31.481Zm1.266,0V4.5h.623V31.481Zm1.266,0V4.5h.623V31.481Zm2.511,0V4.5h1.266V31.481Zm3.154,0V4.5H22.1V31.481Zm2.531,0V4.5h1.266V31.481Zm2.531,0V4.5h1.266V31.481Zm1.888,0V4.5h1.266V31.481Zm3.174,0V4.5h1.888V31.481Zm2.511,0V4.5h.643V31.481Zm1.266.019V4.5H36v27Z" transform="translate(5976 -1621.5)"/>
+    <text id="BOLETO" transform="translate(5994 -1582)" font-size="9" font-family="ArialMT, Arial"><tspan x="-18.174" y="0">BOLETO</tspan></text>
+  </g>
+</svg>
